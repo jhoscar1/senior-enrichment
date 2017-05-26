@@ -1,13 +1,22 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import CampusItem from './CampusItem';
+import AddCampus from './AddCampus';
 
 class CampusList extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            campusName: ''
+            campusName: '',
+            open: false
         }
+        this.toggleForm = this.toggleForm.bind(this);
+    }
+
+    toggleForm() {
+        this.setState({
+            open: !this.state.open
+        })
     }
 
     render() {
@@ -18,9 +27,19 @@ class CampusList extends Component {
             });
 
         return (
-            <div className="campus-list row">
-                {this.renderCampusSearch()}
-                <div className="col-md-4">
+            <div className="container">
+                <div style={{float: 'left'}}>
+                    {this.renderCampusSearch()}
+                    <button
+                        className="btn btn-default adding-campus"
+                        onClick={this.toggleForm}
+                    >
+                        { !this.state.open ? <span className="glyphicon glyphicon-plus" /> : <span className="glyphicon glyphicon-minus" /> }
+                        Add Campus
+                    </button>
+                    { this.state.open ? <AddCampus /> : null }
+                </div>
+                <div className="campus-list row col-md-4">
                     {
                         filteredCampuses.map(filteredCampus => (
                             <CampusItem campus={filteredCampus} key={filteredCampus.id} />

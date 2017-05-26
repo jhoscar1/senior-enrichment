@@ -54,15 +54,21 @@ router.put('/:id/students/:studentId', (req, res, next) => {
 router.post('/', (req, res, next) => {
     Campus.create(req.body)
     .then((campus) => {
-        res.status(201).json(campus);
+        res.json(campus);
     })
     .catch(next);
 })
 
 router.put('/:id', (req, res, next) => {
+    console.log(req.body);
     req.campus.update(req.body)
     .then(updatedCampus => {
-        res.json(updatedCampus);
+        Campus.findById(updatedCampus.id, {
+            include: [{model: User, as: 'Students'}]
+        })
+        .then((inclusiveCampus) => {
+            res.status(201).json(inclusiveCampus);
+        })
     })
     .catch(next);
 })

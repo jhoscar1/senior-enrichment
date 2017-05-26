@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import {addStudent} from '../../redux/user';
+import {editStudent} from '../../redux/user';
 
 
-class AddStudent extends Component {
+class EditStudent extends Component {
 
     constructor(props) {
         super(props);
+        console.log(props);
         this.state = {
-            nameInput: '',
-            emailInput: '',
+            nameInput: `${props.student.name}`,
+            emailInput: `${props.student.email}`,
         }
         this.onSubmit = this.onSubmit.bind(this);
     }
@@ -22,7 +23,8 @@ class AddStudent extends Component {
             email: this.state.emailInput,
             campusId: event.target.campus.value
         }
-        this.props.addStudent(student);
+
+        this.props.editStudent(this.props.student.id, student);
         this.setState({
             name: '',
             email: ''
@@ -32,7 +34,7 @@ class AddStudent extends Component {
     render() {
         const {campuses} = this.props;
         return (
-        <form className="add-student" onSubmit={this.onSubmit}>
+        <form className="edit-student" onSubmit={this.onSubmit}>
             <div className="form-group">
                 <input
                     className="form-control"
@@ -69,7 +71,7 @@ class AddStudent extends Component {
 /* -----------------    CONTAINER     ------------------ */
 
 const mapState = ({campus}) => ({campus})
-const mapDispatch = {addStudent};
+const mapDispatch = {editStudent};
 
-export default connect(mapState, mapDispatch)(AddStudent);
+export default connect(mapState, mapDispatch)(EditStudent);
 

@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import {addStudent} from '../../redux/user';
+import {addCampus} from '../../redux/campus';
 
 
-class AddStudent extends Component {
+class AddCampus extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
             nameInput: '',
-            emailInput: '',
+            imageInput: null
         }
         this.onSubmit = this.onSubmit.bind(this);
     }
@@ -17,22 +17,21 @@ class AddStudent extends Component {
 
     onSubmit(event) {
         event.preventDefault();
-        const student = {
+        const campus = {
             name: this.state.nameInput,
-            email: this.state.emailInput,
-            campusId: event.target.campus.value
+            image: this.state.imageInput
         }
-        this.props.addStudent(student);
+        console.log(campus);
+        this.props.addCampus(campus);
         this.setState({
             name: '',
-            email: ''
+            imageInput: null
         });
     }
 
     render() {
-        const {campuses} = this.props;
         return (
-        <form className="add-student" onSubmit={this.onSubmit}>
+        <form className="add-campus" onSubmit={this.onSubmit}>
             <div className="form-group">
                 <input
                     className="form-control"
@@ -44,20 +43,12 @@ class AddStudent extends Component {
                 />
                 <input
                     className="form-control"
-                    name="email"
+                    name="image"
                     type="text"
-                    placeholder="Email"
-                    onChange={(event) => this.setState({emailInput: event.target.value})}
-                    value={this.state.emailInput}
+                    placeholder="Image Link"
+                    onChange={(event) => this.setState({imageInput: event.target.value})}
+                    value={this.state.imageInput}
                 />
-                <select
-                    className="form-control"
-                    name="campus"
-                >
-                    {campuses.map(campus =>
-                        (<option value={campus.id} key={campus.id}>{campus.name}</option>)
-                    )}
-                </select>
             </div>
             <button type="submit "className="btn btn-primary">Submit
             </button>
@@ -69,7 +60,7 @@ class AddStudent extends Component {
 /* -----------------    CONTAINER     ------------------ */
 
 const mapState = ({campus}) => ({campus})
-const mapDispatch = {addStudent};
+const mapDispatch = {addCampus};
 
-export default connect(mapState, mapDispatch)(AddStudent);
+export default connect(mapState, mapDispatch)(AddCampus);
 

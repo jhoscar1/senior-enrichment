@@ -7,10 +7,21 @@ img {
 }
 
 .campus-item{
-    width: 33%;
     margin-top: 10px;
 }
 
 .glyphicon {
     margin-right: 5px;
+}
+
+body {
+    padding: 5px;
+}
+
+.adding-campus {
+    margin: 10px 15px;
+}
+
+.campus-list {
+    display: inline-block;
 }

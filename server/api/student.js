@@ -50,7 +50,13 @@ router.post('/', (req, res, next) => {
 router.put('/:id', (req, res, next) => {
     req.student.update(req.body)
     .then(updatedStudent => {
-        res.json(updatedStudent);
+        User.findById(updatedStudent.id, {
+            include: [Campus]
+        })
+        .then((inclusiveStudent) => {
+            console.log(inclusiveStudent);
+            res.status(201).json(inclusiveStudent);
+        })
     })
     .catch(next);
 })

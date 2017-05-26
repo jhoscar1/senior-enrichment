@@ -28,7 +28,9 @@ export default (users = [], action) => {
         case CREATE_USER:
             return [action.user, ...users];
         case UPDATE_USER:
-            break;
+            return users.map((user) => {
+                return user.id === action.user.id ? action.user : user;
+            })
         case REMOVE_USER:
             return users.filter((user) => user.id !== action.userId)
         default:
@@ -39,23 +41,30 @@ export default (users = [], action) => {
 
 /* -----------------    DISPATCHERS     ------------------ */
 
-export const getStudents = () => (dispatch) => {
+export const getStudents = () => dispatch => {
     axios.get('/api/students')
     .then(res => res.data)
     .then(users => dispatch(get(users)));
 }
 
-export const removeStudent = (userId) => (dispatch) => {
-    dispatch(remove(userId));
-    axios.delete(`/api/students/${userId}`)
+export const removeStudent = studentId => dispatch => {
+    dispatch(remove(studentId));
+    axios.delete(`/api/students/${studentId}`)
         .catch(err => console.error(err))
 }
 
-export const addStudent = (student) => (dispatch) => {
+export const addStudent = student => dispatch => {
     axios.post('/api/students', student)
     .then(res => res.data)
     .then(createdStudent => {
         dispatch(create(createdStudent));
     })
     .catch(err => console.error(err))
+}
+
+export const editStudent = (studentId, newStudentInfo) => dispatch => {
+    axios.put(`/api/students/${studentId}`, newStudentInfo)
+    .then(res => res.data)
+    .then(updatedStudent => dispatch(update(updatedStudent)))
+    .catch(err => console.error(err));
 }
