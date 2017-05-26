@@ -1,0 +1,341 @@
+{
+	"id": "f3388a91-9d81-aaa3-90fc-87cf4f56e5de",
+	"name": "Seeder",
+	"description": "",
+	"order": [
+		"cfe89ee2-a038-2e8e-8242-8d70dff07ec6",
+		"806b7346-8453-904f-92fa-530e1d9d6c1f",
+		"f0c2197d-d862-4ed2-0553-600c0907bb4f",
+		"bb31b3df-4bf0-f54d-7f88-acd8926e668a",
+		"73335884-6887-da9f-244b-1ffeaa90dfb0",
+		"0e22ed92-d796-59b0-ac9c-242a4fb27891",
+		"61824923-2462-fd6e-59ac-c33170b3e223",
+		"87ebc2ff-b3fb-9239-bd18-f7a621a112e8",
+		"71ecbda3-737d-4811-394e-49842427ae7c",
+		"cd940c1a-aecf-7a1f-11c5-81b2fcc5765a"
+	],
+	"folders": [],
+	"timestamp": 1495717601915,
+	"owner": 0,
+	"public": false,
+	"requests": [
+		{
+			"id": "0e22ed92-d796-59b0-ac9c-242a4fb27891",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"url": "http://localhost:1337/api/campuses/1/students/1",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [
+				{
+					"key": "name",
+					"value": "Jupiter",
+					"type": "text",
+					"enabled": false
+				},
+				{
+					"key": "email",
+					"value": "test@test.net",
+					"type": "text",
+					"enabled": false
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1495724642948,
+			"name": "http://localhost:1337/api/campuses/1/students/1",
+			"description": "",
+			"collectionId": "f3388a91-9d81-aaa3-90fc-87cf4f56e5de"
+		},
+		{
+			"id": "61824923-2462-fd6e-59ac-c33170b3e223",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"url": "http://localhost:1337/api/campuses/1/students/2",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [
+				{
+					"key": "name",
+					"value": "Jupiter",
+					"type": "text",
+					"enabled": false
+				},
+				{
+					"key": "email",
+					"value": "test@test.net",
+					"type": "text",
+					"enabled": false
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1495724646258,
+			"name": "http://localhost:1337/api/campuses/1/students/2",
+			"description": "",
+			"collectionId": "f3388a91-9d81-aaa3-90fc-87cf4f56e5de"
+		},
+		{
+			"id": "71ecbda3-737d-4811-394e-49842427ae7c",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"url": "http://localhost:1337/api/campuses/2/students/1",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [
+				{
+					"key": "name",
+					"value": "Jupiter",
+					"type": "text",
+					"enabled": false
+				},
+				{
+					"key": "email",
+					"value": "test@test.net",
+					"type": "text",
+					"enabled": false
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1495724653536,
+			"name": "http://localhost:1337/api/campuses/2/students/1",
+			"description": "",
+			"collectionId": "f3388a91-9d81-aaa3-90fc-87cf4f56e5de"
+		},
+		{
+			"id": "73335884-6887-da9f-244b-1ffeaa90dfb0",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"url": "http://localhost:1337/api/campuses",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "name",
+					"value": "Jupiter",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "email",
+					"value": "test@test.net",
+					"type": "text",
+					"enabled": false
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1495724629782,
+			"name": "http://localhost:1337/api/campuses",
+			"description": "",
+			"collectionId": "f3388a91-9d81-aaa3-90fc-87cf4f56e5de",
+			"responses": []
+		},
+		{
+			"id": "806b7346-8453-904f-92fa-530e1d9d6c1f",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"url": "http://localhost:1337/api/students",
+			"pathVariables": {},
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "f3388a91-9d81-aaa3-90fc-87cf4f56e5de",
+			"data": [
+				{
+					"key": "name",
+					"value": "Blurpp Frank",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "email",
+					"value": "test@test.biz",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"name": "http://localhost:1337/api/students",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1495717681603,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "87ebc2ff-b3fb-9239-bd18-f7a621a112e8",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"url": "http://localhost:1337/api/campuses/2/students/3",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [
+				{
+					"key": "name",
+					"value": "Jupiter",
+					"type": "text",
+					"enabled": false
+				},
+				{
+					"key": "email",
+					"value": "test@test.net",
+					"type": "text",
+					"enabled": false
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1495724649840,
+			"name": "http://localhost:1337/api/campuses/2/students/3",
+			"description": "",
+			"collectionId": "f3388a91-9d81-aaa3-90fc-87cf4f56e5de"
+		},
+		{
+			"id": "bb31b3df-4bf0-f54d-7f88-acd8926e668a",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"url": "http://localhost:1337/api/campuses",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "name",
+					"value": "Mars",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "email",
+					"value": "test@test.net",
+					"type": "text",
+					"enabled": false
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1495724624181,
+			"name": "http://localhost:1337/api/campuses",
+			"description": "",
+			"collectionId": "f3388a91-9d81-aaa3-90fc-87cf4f56e5de",
+			"responses": []
+		},
+		{
+			"id": "cd940c1a-aecf-7a1f-11c5-81b2fcc5765a",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"url": "http://localhost:1337/api/campuses/2/students/3",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [
+				{
+					"key": "name",
+					"value": "Jupiter",
+					"type": "text",
+					"enabled": false
+				},
+				{
+					"key": "email",
+					"value": "test@test.net",
+					"type": "text",
+					"enabled": false
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1495724656675,
+			"name": "http://localhost:1337/api/campuses/2/students/3",
+			"description": "",
+			"collectionId": "f3388a91-9d81-aaa3-90fc-87cf4f56e5de"
+		},
+		{
+			"id": "cfe89ee2-a038-2e8e-8242-8d70dff07ec6",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"url": "http://localhost:1337/api/students",
+			"pathVariables": {},
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "f3388a91-9d81-aaa3-90fc-87cf4f56e5de",
+			"data": [
+				{
+					"key": "name",
+					"value": "jason",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "email",
+					"value": "test@test.com",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"name": "http://localhost:1337/api/students",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1495717626614,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "f0c2197d-d862-4ed2-0553-600c0907bb4f",
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"url": "http://localhost:1337/api/students",
+			"pathVariables": {},
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "f3388a91-9d81-aaa3-90fc-87cf4f56e5de",
+			"data": [
+				{
+					"key": "name",
+					"value": "Jurgen Dropper",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "email",
+					"value": "test@test.net",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"name": "http://localhost:1337/api/students",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1495717684857,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		}
+	]
+}
