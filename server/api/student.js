@@ -35,7 +35,14 @@ router.get('/:id', (req, res, next) => {
 router.post('/', (req, res, next) => {
     User.create(req.body)
     .then((student) => {
-        res.status(201).json(student);
+        User.findById(student.id, {
+            include: [Campus]
+        })
+        .then((inclusiveStudent) => {
+            console.log(inclusiveStudent);
+            res.status(201).json(inclusiveStudent);
+        })
+        
     })
     .catch(next);
 })

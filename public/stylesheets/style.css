@@ -1,0 +1,16 @@
+.active{
+    border: 1px solid red;
+}
+
+img {
+    max-width: 100%;
+}
+
+.campus-item{
+    width: 33%;
+    margin-top: 10px;
+}
+
+.glyphicon {
+    margin-right: 5px;
+}

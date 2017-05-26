@@ -8,5 +8,11 @@
 const User = require('./user')
 const Campus = require('./campus');
 
+User.belongsTo(Campus);
+Campus.hasMany(User, {
+	as: 'Students',
+	onDelete: 'cascade',
+	hooks: true
+});
 
 module.exports = {User, Campus}

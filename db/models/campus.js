@@ -1,12 +1,16 @@
 'use strict';
 var Sequelize = require('sequelize')
 var db = require('../index.js')
-const User = require('./user');
 
 const Campus = db.define('campus', {
-    name: Sequelize.STRING
+    name: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    image: {
+        type: Sequelize.STRING,
+        defaultValue: '../../images/default-planet.jpg'
+    }
 });
-
-Campus.hasMany(User);
 
 module.exports = Campus;
