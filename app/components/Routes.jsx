@@ -3,7 +3,7 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import {connect} from 'react-redux';
 import Root from './Root.jsx';
 import {getCampuses, getCampus} from '../redux/campus';
-import {getStudents} from '../redux/user';
+import {getStudents} from '../redux/student';
 import CampusList from './Campus/CampusList';
 import CampusDetail from './Campus/CampusDetail';
 import StudentList from './Student/StudentList';

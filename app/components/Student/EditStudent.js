@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import {editStudent} from '../../redux/user';
+import {editStudent} from '../../redux/student';
 
 
 class EditStudent extends Component {

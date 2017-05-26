@@ -1,9 +1,9 @@
 const router = require('express').Router()
 const db = require('../../db')
-const {Campus, User} = require('../../db/models')
+const {Campus, Student} = require('../../db/models')
 
 router.param('id', (req, res, next, id) => {
-    User.findById(id)
+    Student.findById(id)
     .then(foundStudent => {
         if (foundStudent) {
             req.student = foundStudent;
@@ -19,7 +19,7 @@ router.param('id', (req, res, next, id) => {
 })
 
 router.get('/', (req, res, next) => {
-    User.findAll({
+    Student.findAll({
         include: [Campus]
     })
     .then(foundStudent => {
@@ -33,9 +33,9 @@ router.get('/:id', (req, res, next) => {
 })
 
 router.post('/', (req, res, next) => {
-    User.create(req.body)
+    Student.create(req.body)
     .then((student) => {
-        User.findById(student.id, {
+        Student.findById(student.id, {
             include: [Campus]
         })
         .then((inclusiveStudent) => {
@@ -50,7 +50,7 @@ router.post('/', (req, res, next) => {
 router.put('/:id', (req, res, next) => {
     req.student.update(req.body)
     .then(updatedStudent => {
-        User.findById(updatedStudent.id, {
+        Student.findById(updatedStudent.id, {
             include: [Campus]
         })
         .then((inclusiveStudent) => {

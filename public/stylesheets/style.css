@@ -29,3 +29,8 @@ body {
 #home {
     text-align: center;
 }
+
+.student-item {
+    display: inline-block;
+}
+

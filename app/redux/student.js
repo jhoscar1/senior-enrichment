@@ -6,35 +6,33 @@ const CREATE_USER = 'CREATE_USER';
 const UPDATE_USER = 'UPDATE_USER';
 const REMOVE_USER = 'REMOVE_USER';
 
-// Maybe on campus?
-const SET_CAMPUS = 'SET_CAMPUS'
 
 
 /* -----------------    ACTION CREATORS   ------------------ */
-const get = users => ({type: FETCH_USERS, users});
-const create = user => ({type: CREATE_USER, user});
-const update = user => ({type: UPDATE_USER, user});
-const remove = userId => ({type: REMOVE_USER, userId});
+const get = students => ({type: FETCH_USERS, students});
+const create = student => ({type: CREATE_USER, student});
+const update = student => ({type: UPDATE_USER, student});
+const remove = studentId => ({type: REMOVE_USER, studentId});
 //const setUserCampus = 
 
 
 /* -----------------    REDUCER     ------------------ */
 
-export default (users = [], action) => {
+export default (students = [], action) => {
 
     switch (action.type) {
         case FETCH_USERS:
-            return action.users;
+            return action.students;
         case CREATE_USER:
-            return [action.user, ...users];
+            return [action.user, ...students];
         case UPDATE_USER:
-            return users.map((user) => {
-                return user.id === action.user.id ? action.user : user;
+            return students.map((student) => {
+                return student.id === action.student.id ? action.student : student;
             })
         case REMOVE_USER:
-            return users.filter((user) => user.id !== action.userId)
+            return students.filter((student) => student.id !== action.studentId)
         default:
-            return users;
+            return students;
     }
 }
 
@@ -44,7 +42,7 @@ export default (users = [], action) => {
 export const getStudents = () => dispatch => {
     axios.get('/api/students')
     .then(res => res.data)
-    .then(users => dispatch(get(users)));
+    .then(students => dispatch(get(students)));
 }
 
 export const removeStudent = studentId => dispatch => {

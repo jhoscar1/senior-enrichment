@@ -44,9 +44,9 @@ class StudentDetail extends Component {
 
 /* -----------------    CONTAINER     ------------------ */
 
-const mapState = ({users, campus}, ownProps) => {
-    const student = users.find((user) => (
-            +user.id === +ownProps.params.id
+const mapState = ({students, campus}, ownProps) => {
+    const student = students.find((element) => (
+            +element.id === +ownProps.params.id
         )
     );
 

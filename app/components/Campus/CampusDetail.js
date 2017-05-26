@@ -75,8 +75,8 @@ const mapState = (state, ownProps) => {
     }
 
     let students;
-    if (state.users) {
-        students = state.users.filter((element) => {
+    if (state.students) {
+        students = state.students.filter((element) => {
             return +element.campusId === +ownProps.params.id;
         })
     }

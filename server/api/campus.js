@@ -1,6 +1,6 @@
 const router = require('express').Router()
 const db = require('../../db')
-const {Campus, User} = require('../../db/models')
+const {Campus, Student} = require('../../db/models')
 
 router.param('id', (req, res, next, id) => {
     Campus.findById(id)
@@ -20,7 +20,7 @@ router.param('id', (req, res, next, id) => {
 
 router.get('/', (req, res, next) => {
     Campus.findAll({
-        include: [{model: User, as: 'Students'}]
+        include: [{model: Student, as: 'Students'}]
     })
     .then(foundCampuses => {
         res.status(200).json(foundCampuses)
@@ -41,7 +41,7 @@ router.get('/:id/students', (req, res, next) => {
 })
 
 router.put('/:id/students/:studentId', (req, res, next) => {
-    User.findById(+req.params.studentId)
+    Student.findById(+req.params.studentId)
     .then(foundStudent => {
         req.campus.addStudent(foundStudent)
         .then(campus => {
@@ -64,7 +64,7 @@ router.put('/:id', (req, res, next) => {
     req.campus.update(req.body)
     .then(updatedCampus => {
         Campus.findById(updatedCampus.id, {
-            include: [{model: User, as: 'Students'}]
+            include: [{model: Student, as: 'Students'}]
         })
         .then((inclusiveCampus) => {
             res.status(201).json(inclusiveCampus);
