@@ -6,7 +6,6 @@ class EditCampus extends Component {
 
     constructor(props) {
         super(props);
-        console.log(props);
         this.state = {
             nameInput: `${props.campus.name}`
         }

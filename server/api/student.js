@@ -39,7 +39,6 @@ router.post('/', (req, res, next) => {
             include: [Campus]
         })
         .then((inclusiveStudent) => {
-            console.log(inclusiveStudent);
             res.status(201).json(inclusiveStudent);
         })
         
@@ -54,7 +53,6 @@ router.put('/:id', (req, res, next) => {
             include: [Campus]
         })
         .then((inclusiveStudent) => {
-            console.log(inclusiveStudent);
             res.status(201).json(inclusiveStudent);
         })
     })

@@ -21,7 +21,6 @@ class AddCampus extends Component {
             name: this.state.nameInput,
             image: this.state.imageInput
         }
-        console.log(campus);
         this.props.addCampus(campus);
         this.setState({
             name: '',

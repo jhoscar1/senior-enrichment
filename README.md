@@ -1,5 +1,10 @@
 # Senior Enrichment Project
 
+
+#UPDATE:
+
+I added a Postman file to the repo because I was unable to get a seed file successfully working and I used a Postman collection to make a batch of requests.
+
 Make a thing!
 
 ## Getting started
@@ -93,4 +98,3 @@ DELETE
 - Routes (25%)
 - Frontend logic and functionality (25%)
 - Design + Bonus features (up to 10 Extra Credit points)
-

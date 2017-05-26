@@ -60,7 +60,6 @@ router.post('/', (req, res, next) => {
 })
 
 router.put('/:id', (req, res, next) => {
-    console.log(req.body);
     req.campus.update(req.body)
     .then(updatedCampus => {
         Campus.findById(updatedCampus.id, {
