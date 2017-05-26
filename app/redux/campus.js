@@ -82,7 +82,6 @@ export const addCampus = campus => dispatch => {
     axios.post('/api/campuses', campus)
     .then(res => res.data)
     .then(createdCampus => {
-        console.log(createdCampus);
         dispatch(create(createdCampus))
     })
     .catch(err => console.error(err));

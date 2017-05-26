@@ -14,11 +14,11 @@ export default (props) => (
                     <span className="icon-bar" />
                     <span className="icon-bar" />
                 </button>
-                <Link className="navbar-brand" to="/">Space Jam</Link>
+                <Link className="navbar-brand" to="/">Space Skool</Link>
             </div>
             <ul className="nav navbar-nav navbar-right">
                 <li><Link activeClassName="active" to='/campuses'>Campus</Link></li>
-                <li><Link to='/students'>Students</Link></li>
+                <li><Link activeClassName="active" to='/students'>Students</Link></li>
             </ul>
         </div>
     </nav>

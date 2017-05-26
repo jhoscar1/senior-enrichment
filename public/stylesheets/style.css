@@ -25,3 +25,7 @@ body {
 .campus-list {
     display: inline-block;
 }
+
+#home {
+    text-align: center;
+}
